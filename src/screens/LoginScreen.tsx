@@ -4,12 +4,10 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
   TouchableOpacity,
-  Dimensions,
 } from 'react-native';
 import { colors } from "../theme/colors";
 import { useNavigation } from '@react-navigation/native';
@@ -67,7 +65,6 @@ export default function LoginScreen() {
           />
 
           <View style={styles.rowBetween}>
-            {/* Checkbox + label */}
             <View style={styles.checkboxRow}>
               <Checkbox
                 value={lembrar}
@@ -77,17 +74,15 @@ export default function LoginScreen() {
               <Text style={styles.checkboxLabel}>Lembrar-me</Text>
             </View>
 
-            {/* Esqueci senha */}
             <TouchableOpacity onPress={() => {}}>
               <Text style={styles.forgotText}>Esqueci a senha</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.justifyButton}>
-            <PrimaryButton title="ENTRAR" onPress={() => {}} />
+            <PrimaryButton title="ENTRAR" onPress={() => navigation.navigate("Vendas" as never)} />
           </View>
           
-
         </FormBackground>
         <View style={[styles.flex, styles.footer]}>
           <BackButton onPress={() => navigation.navigate("Home" as never)}/>
@@ -128,8 +123,8 @@ const styles = StyleSheet.create({
 
   justifyButton: {
     flex: 1,
-    justifyContent: "center",   // vertical
-    alignItems: "center",       // horizontal
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   rowBetween: {
@@ -158,7 +153,6 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     justifyContent: 'flex-end',
     paddingBottom: 60
-
   }
 
 });
